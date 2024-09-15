@@ -1,15 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Form } from './Form.jsx'
-import { Users } from './Users.jsx'
-import { Navbar } from './Navbar.jsx'
-import ButtonCounter from './ButtonCounter.jsx'
+import {BrowserRouter} from "react-router-dom"
+import App from './App'
+
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Navbar/>
-    <ButtonCounter />
-    <Form />
-    <Users/>
-  </StrictMode>,
+  <BrowserRouter>
+    <StrictMode>
+      <App/>
+    </StrictMode>
+  </BrowserRouter>
 )

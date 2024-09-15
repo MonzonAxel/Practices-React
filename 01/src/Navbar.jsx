@@ -1,10 +1,12 @@
+import { Link, NavLink } from "react-router-dom";
+
 export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div name="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand">
           Navbar
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -18,18 +20,18 @@ export const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav">
-            <a className="nav-link active" aria-current="page" href="#">
-              Home
-            </a>
-            <a className="nav-link" href="#">
-              Contact
-            </a>
-            <a className="nav-link" href="#">
-              About us
-            </a>
-            <a className="nav-link" href="#">
-              Projetcs
-            </a>
+            <NavLink to = "/" className="nav-link ">
+              Contador
+            </NavLink>
+            <NavLink to ="/Contact" className="nav-link">
+              X
+            </NavLink>
+            <NavLink to="/AboutUs" className="nav-link">
+              Formulario 
+            </NavLink>
+            <NavLink to ="/Project" className="nav-link">
+              Usuarios
+            </NavLink>
           </div>
         </div>
       </div>
