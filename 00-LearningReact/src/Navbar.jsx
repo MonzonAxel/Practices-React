@@ -23,9 +23,6 @@ export const Navbar = () => {
             <NavLink to = "/" className="nav-link ">
               Contador
             </NavLink>
-            <NavLink to ="/Contact" className="nav-link">
-              X
-            </NavLink>
             <NavLink to="/AboutUs" className="nav-link">
               Formulario 
             </NavLink>
