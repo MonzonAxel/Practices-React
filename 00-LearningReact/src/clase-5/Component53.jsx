@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const Component4 = ({ reyes }) => {
+export const Component53 = ({ reyes }) => {
   const [contadores, setContadores] = useState(Array(reyes.length).fill(0));
 
   const handleCount = (index) => {

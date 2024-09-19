@@ -1,4 +1,4 @@
-export const Component = ({ reyes }) => {
+export const Component50 = ({ reyes }) => {
     return (
       <>
         <p>Lista de reyes con sus reinados y comida diaria</p>

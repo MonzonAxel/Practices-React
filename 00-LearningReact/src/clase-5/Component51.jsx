@@ -1,4 +1,4 @@
-export const Component2 = ({ reyes }) => {
+export const Component51 = ({ reyes }) => {
     const handleDelete = (e) => {
       e.target.parentNode.remove();
     };
@@ -6,7 +6,7 @@ export const Component2 = ({ reyes }) => {
     return (
       <>
         <h1>Component 2</h1>
-        <p>Actividad: Traer a los reyes que no tengan letra "g" en sus nombres</p>
+        <p>Actividad: Traer a los reyes que no tengan letra g en sus nombres</p>
         <p>Más un botón para eliminar</p>
         {reyes
           .filter((valor) => !valor.nombre.includes("g"))

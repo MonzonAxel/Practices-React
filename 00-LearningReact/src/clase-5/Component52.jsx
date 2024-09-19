@@ -1,4 +1,4 @@
-export const Component3 = ({ reyes }) => {
+export const Component52 = ({ reyes }) => {
     const finded = reyes.find((valor) =>
       valor.nombre.toLowerCase().startsWith("e")
     );
