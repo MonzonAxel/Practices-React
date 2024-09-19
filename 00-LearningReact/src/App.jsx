@@ -3,11 +3,12 @@ import { Navbar } from './Navbar.jsx'
 import { Home } from './routes/Home.jsx'
 import { AboutUs } from './routes/FormView.jsx'
 import { Project } from './routes/UserView.jsx'
-
+import { Clase5 } from "./clase-5/clase5.jsx"
 const App = () => {
   return (
     <>
       <Navbar />
+      <Clase5></Clase5>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/AboutUs" element={<AboutUs></AboutUs>}></Route>
