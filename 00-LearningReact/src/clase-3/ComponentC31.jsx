@@ -1,48 +1,39 @@
-import { useRef } from "react"
-import { useState } from "react"
+import { useRef } from "react";
+import { useState } from "react";
 
 export const ComponentC31 = () => {
-    
-  const reyesGodos=[
+  const reyesGodos = [
     {
       nombre: "Ataúlfo",
       aficion: "comer toros sin pelar",
-    },{
+    },
+    {
       nombre: "Recesvinto",
       aficion: "leer a Hegel en arameo",
-    },{
+    },
+    {
       nombre: "Teodorico",
-      aficion: "la cría del escarabajo en almíbar"
+      aficion: "la cría del escarabajo en almíbar",
+    },
+  ];
+
+  const [counter, setCounter] = useState(0);
+  const buttonRef = useRef(null);
+
+  const handleClick = () => {
+    setCounter(counter + 1);
+    if (counter + 1 >= reyesGodos.length) {
+      setCounter(0);
     }
-  ]
+    buttonRef.current.textContent =
+      reyesGodos[counter].nombre + " " + reyesGodos[counter].aficion;
+  };
 
-    const [name,setName] = useState("")
-    const [counter,setCounter] = useState(0)
-    const buttonRef = useRef(null)
-
-    const handleClick = () => {
-        if ( counter <= 2){
-            setCounter(counter - 1)
-        }
-        buttonRef.current.textContent = reyesGodos[counter].nombre
-
-        if(counter == 0){
-            setCounter( counter + 1)
-        }
-        
-        
-    }
-
-    return(
-        <div>
-            <h1>Componente 1 </h1>
-            <button onClick={handleClick}>
-                <div
-                ref={buttonRef}
-                >    
-                </div>
-            </button>
-        </div>
-        
-    )
-}
+  return (
+    <div>
+      <h2>Componente 1 - UseRef </h2>
+      <button onClick={handleClick}>Hacer click</button>
+      <p ref={buttonRef}></p>
+    </div>
+  );
+};
