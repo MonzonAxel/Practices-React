@@ -12,7 +12,7 @@ export const ComponentC32 = () => {
   const [euro, setEuro] = useState(0);
 
   const handleConverter = (e) => {
-    const euroPrice = parseFloat(e.target.value) || 0;
+    const euroPrice = e.target.value
     if (euroPrice < 0) return;
     setEuro(euroPrice);
   };
