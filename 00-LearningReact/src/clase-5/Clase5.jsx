@@ -1,7 +1,7 @@
-import { Component4 } from "./Component4";
-import { Component3 } from "./Component3";
-import { Component2 } from "./Component2";
-import { Component } from "./Component";
+import { Component50 } from "./Component50";
+import { Component51 } from "./Component51";
+import { Component52 } from "./Component52";
+import { Component53 } from "./Component53";
 
 export function Clase5() {
   const reyes = [
@@ -45,10 +45,11 @@ export function Clase5() {
   return (
     <div className="App">
       <div>
-        <Component reyes={reyes} />
-        <Component2 reyes={reyes} />
-        <Component3 reyes={reyes} />
-        <Component4 reyes={reyes} />
+        <h1>Clase 5</h1>
+        <Component50 reyes={reyes} />
+        <Component51 reyes={reyes} />
+        <Component52 reyes={reyes} />
+        <Component53 reyes={reyes} />
       </div>
     </div>
   );
