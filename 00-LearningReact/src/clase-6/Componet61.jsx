@@ -1,5 +1,7 @@
 export const Component61 = () =>{
     return(
-        <h1></h1>
+        <p>
+            Debo mostrar un listado de chistes 
+        </p>
     )
 }
