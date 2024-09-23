@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const ComponentC31Ref = () => {
+export const ComponentC31 = () => {
   const reyesGodos = [
     {
       nombre: "Ataúlfo",
