@@ -3,3 +3,7 @@ export const Clase6 = () =>{
         <h1>Clase 6</h1>
     )
 }
+
+
+
+

@@ -1,5 +1,5 @@
 import { ComponentC31 } from "./ComponentC31"
-import { ComponentC31Ref } from "./ComponentC31REF"
+import { ComponentC31Ref } from "./ComponentC31Ref.jsx"
 import { ComponentC32 } from "./ComponenteC32"
 
 export const Clase3 = () => {

@@ -1,7 +1,6 @@
-import { useRef } from "react";
 import { useState } from "react";
 
-export const ComponentC31 = () => {
+export const ComponentC31Ref = () => {
   const reyesGodos = [
     {
       nombre: "Ataúlfo",
@@ -17,23 +16,22 @@ export const ComponentC31 = () => {
     },
   ];
 
+  const [message, setMessage] = useState("");
   const [counter, setCounter] = useState(0);
-  const buttonRef = useRef(null);
 
   const handleClick = () => {
     setCounter(counter + 1);
-    if (counter + 1 >= reyesGodos.length) {
+    if (counter + 1 == reyesGodos.length) {
       setCounter(0);
     }
-    buttonRef.current.textContent =
-      reyesGodos[counter].nombre + " " + reyesGodos[counter].aficion;
+    setMessage(reyesGodos[counter].nombre + " " + reyesGodos[counter].aficion);
   };
 
   return (
     <div>
-      <h2>Componente 1 - UseRef </h2>
+      <h2>Componente 1 - useState * 2 </h2>
       <button onClick={handleClick}>Hacer click</button>
-      <p ref={buttonRef}></p>
+      <p>{message}</p>
     </div>
   );
 };
