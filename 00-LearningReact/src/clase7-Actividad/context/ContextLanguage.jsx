@@ -1,5 +1,8 @@
-import "./stylesClase7Act.css";
-export const Clase7Actividad = () => {
+import { createContext, useState } from "react"
+
+export const ContextLanguage = createContext()
+
+export const DataLanguage = ({children}) => {
 
   const valores = [
     {
@@ -34,31 +37,11 @@ export const Clase7Actividad = () => {
     },
   ];
 
+  const [lenguaje,setLenguaje] = useState(valores)
+
   return (
-    <div>
-      <div>
-        <p>Cambiar al Idioma deseado</p>
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <img src="" alt="" />
-      </div>
-      <div>
-        <h2>{valores.titulo}</h2>
-        <p>2 dias a la semana una profesora solo para ti </p>
-      </div>
-      <div>
-        <button>Profesora</button>
-        <button>Lugar</button>
-      </div>
-      <div>
-        <p>Profesor</p>
-        <img src="" alt="Imagen Profesor" />
-        <p>Nombre  Profesor</p>
-      </div>
-      <div>
-        <p>Lugar</p>
-        <p>Direccion</p>
-      </div>
-    </div>
-  );
-};
+    <ContextLanguage.Provider value={{lenguaje, setLenguaje}}>
+      {children}
+    </ContextLanguage.Provider>
+  )
+}
