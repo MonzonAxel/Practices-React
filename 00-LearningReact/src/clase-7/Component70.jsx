@@ -1,11 +1,14 @@
 import { useContext } from "react"
 import { Contexto } from "./context/Contexto"
 
-export const Component70 = () =>{
+export const Component70 = ({value}) =>{
 
     const {color} = useContext(Contexto)
 
     return(
-        <h3>Uso del Contexto {color}</h3>
+        <div style={{backgroundColor:color}}>
+            <h3>{value}</h3>
+        </div>
+        
     )
 }
