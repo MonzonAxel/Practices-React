@@ -8,7 +8,7 @@ export const Profesor = ({index}) => {
   return (
     <div className="container-profesora">
         <p>Profesor</p>
-        <img src="/images/aimee.PNG" alt="Imagen Profesor" />
+        <img src={`/images/${lenguaje[index].foto}`} alt="Imagen Profesor" />
         <p>{lenguaje[index].nombre}</p>
       </div>
   )

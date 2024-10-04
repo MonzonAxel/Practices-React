@@ -1,13 +1,24 @@
 import { Lugar } from "./Lugar";
 import { Profesor } from "./Profesor";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ContextLanguage } from "./context/ContextLanguage";
 
 export const Informacion = () => {
 
     const {lenguaje} = useContext(ContextLanguage)
+    const [profesor,setProfesor] = useState(false)
+    const [lugar,setLugar] = useState(false)
     const index = lenguaje[3].idioma
 
+    const handleProfesor = () => {
+      setProfesor(!profesor)
+      setLugar(false)
+    }
+
+    const handleLugar = () => {
+      setLugar(!lugar)
+      setProfesor(false)
+    }
   return (
     <>
       <div className="container-informacion">
@@ -15,11 +26,16 @@ export const Informacion = () => {
         <p>{lenguaje[index].texto} </p>
       </div>
       <div className="container-botones">
-        <button>{lenguaje[index].boton1}</button>
-        <button>{lenguaje[index].boton2}</button>
+        <button onClick={handleProfesor}>{lenguaje[index].boton1}</button>
+        <button onClick={handleLugar}>{lenguaje[index].boton2}</button>
       </div>
-      <Profesor index={index}></Profesor>
-      <Lugar index={index} ></Lugar> 
+      {
+        profesor ? <Profesor index={index}></Profesor> : null
+      }
+      {
+        lugar ? <Lugar index={index} ></Lugar> : null
+      }  
     </>
   );
 };
+
