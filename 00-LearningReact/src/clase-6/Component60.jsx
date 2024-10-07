@@ -33,7 +33,7 @@ export const Component60 = () => {
           </div>
         </div>
       ) : (
-        <p>Esta Vacio</p>
+        <p>Cargando ...</p>
       )}
     </section>
   );

@@ -14,16 +14,16 @@ const App = () => {
   return (
     <>
       <Navbar />
-      <Clase3></Clase3>
-      <Clase4></Clase4>
-      <Clase5></Clase5>
-      <Clase6></Clase6>
-      <Clase7></Clase7>
-      <Clase7Actividad></Clase7Actividad>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/AboutUs" element={<AboutUs></AboutUs>}></Route>
         <Route path="/Project" element={<Project></Project>}></Route>
+        <Route path="/Clase3" element={<Clase3></Clase3>}></Route>
+        <Route path="/Clase4" element={<Clase4></Clase4>}></Route>
+        <Route path="/Clase5" element={<Clase5></Clase5>}></Route>
+        <Route path="/Clase6" element={<Clase6></Clase6>}></Route>
+        <Route path="/Clase7" element={<Clase7></Clase7>}></Route>
+        <Route path="/Clase7plus" element={<Clase7Actividad></Clase7Actividad>}></Route>
         <Route path="/*" element={<Navigate to= "/" />}></Route>
       </Routes>
     </>

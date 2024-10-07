@@ -5,7 +5,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div name="container-fluid">
         <Link className="navbar-brand">
-          Navbar
+          Listado de Clases y Actividades
         </Link>
         <button
           className="navbar-toggler"
@@ -28,6 +28,39 @@ export const Navbar = () => {
             </NavLink>
             <NavLink to ="/Project" className="nav-link">
               Usuarios
+            </NavLink>
+            <NavLink to = "/Clase3" className="nav-link ">
+              Clase3
+            </NavLink>
+            <NavLink to = "/Clase4" className="nav-link ">
+              Clase4
+            </NavLink>
+            <NavLink to = "/Clase5" className="nav-link ">
+              Clase5
+            </NavLink>
+            <NavLink to = "/Clase6" className="nav-link ">
+              Clase6
+            </NavLink>
+            <NavLink to = "/Clase7" className="nav-link ">
+              Clase7
+            </NavLink>
+            <NavLink to = "/Clase7plus" className="nav-link ">
+              Clase7+
+            </NavLink>
+            <NavLink to = "/Clase8" className="nav-link ">
+              Clase8
+            </NavLink>
+            <NavLink to = "/Clase9" className="nav-link ">
+              Clase9
+            </NavLink>
+            <NavLink to = "/Clase10" className="nav-link ">
+              Clase10
+            </NavLink>
+            <NavLink to = "/Clase11" className="nav-link ">
+              Clase11
+            </NavLink>
+            <NavLink to = "/Clase12" className="nav-link ">
+              Clase12
             </NavLink>
           </div>
         </div>
