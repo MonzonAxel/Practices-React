@@ -9,6 +9,7 @@ import { Clase5 } from "./clase-5/clase5.jsx"
 import { Clase6 } from "./clase-6/Clase6.jsx"
 import { Clase7 } from "./clase-7/Clase7.jsx"
 import { Clase7Actividad } from "./clase7-Actividad/Clase7Actividad.jsx"
+import { Clase9 } from "./clase-9/Clase9.jsx"
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/Clase6" element={<Clase6></Clase6>}></Route>
         <Route path="/Clase7" element={<Clase7></Clase7>}></Route>
         <Route path="/Clase7plus" element={<Clase7Actividad></Clase7Actividad>}></Route>
+        <Route path="/Clase9" element={<Clase9></Clase9>}></Route>
         <Route path="/*" element={<Navigate to= "/" />}></Route>
       </Routes>
     </>

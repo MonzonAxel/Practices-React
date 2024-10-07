@@ -47,9 +47,6 @@ export const Navbar = () => {
             <NavLink to = "/Clase7plus" className="nav-link ">
               Clase7+
             </NavLink>
-            <NavLink to = "/Clase8" className="nav-link ">
-              Clase8
-            </NavLink>
             <NavLink to = "/Clase9" className="nav-link ">
               Clase9
             </NavLink>
@@ -61,6 +58,9 @@ export const Navbar = () => {
             </NavLink>
             <NavLink to = "/Clase12" className="nav-link ">
               Clase12
+            </NavLink>
+            <NavLink to = "/Clase13" className="nav-link ">
+              Clase13
             </NavLink>
           </div>
         </div>
