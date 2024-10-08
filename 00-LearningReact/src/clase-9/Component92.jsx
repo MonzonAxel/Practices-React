@@ -25,7 +25,7 @@ const reducer = (state, action) => {
 export const Component92 = () => {
     const [state, dispatch] = useReducer(reducer, initialValue);
     const [input,setInputValue] = useState("")
-    
+
   return (
     <>
       <h3>Actividad 3 | to do List con useReducer</h3>
@@ -41,5 +41,3 @@ export const Component92 = () => {
     </>
   );
 };
-{
-}
