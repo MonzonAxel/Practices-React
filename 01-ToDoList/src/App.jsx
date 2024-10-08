@@ -118,8 +118,8 @@ useEffect(() => {
                 </>
               )}
               <button onClick={() => handleDelete(index)}>
-                    Eliminar tarea
-                  </button>
+                Eliminar tarea
+              </button>
             </li>
           ))}
         </ul>
