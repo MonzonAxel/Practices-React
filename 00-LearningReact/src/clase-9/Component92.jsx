@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import {useReducer, useRef, useState } from "react";
 
 const types = {
   add: "add",
@@ -10,21 +10,32 @@ const types = {
 const initialValue = [];
 
 const reducer = (state, action) => {
-  switch (action.types) {
+
+  switch (action.type) {
     case types.add:
-      return;
-    case types.edit:
-      return;
+      return [...state,action.payload] 
+    case types.addUnidad:
+      return state.map((states) => states.id == action.payload
+      ? 
+        {...states, cantidad:states.cantidad+1}
+      : (states))
+    case types.lessUnidad:
+      return state.map((states) => states.id == action.payload && states.cantidad >= 1 
+      ? 
+        {...states, cantidad:states.cantidad+1}
+      : (states))
     case types.delete:
-      return;
+      return state.filter((states)=> states.id != action.payload)
     default:
       return state;
   }
 };
 
+
 export const Component92 = () => {
     const [state, dispatch] = useReducer(reducer, initialValue);
     const [input,setInputValue] = useState("")
+    const refValue = useRef(null)
 
   return (
     <>
@@ -32,12 +43,31 @@ export const Component92 = () => {
       <div>
         <label htmlFor="text">Producto:</label>
         <input type="text" value={input} onChange={(e)=>setInputValue(e.target.value)} />
-        <button>Añadir</button>
+        <button
+        ref={refValue} 
+        onClick={()=> {
+          if(input.trim() == "") return
+          dispatch({type:types.add, payload:{id:Date.now(),nombre:input,cantidad:1}})
+          refValue.current.focus();
+          setInputValue("");
+        } } 
+        >Añadir</button>
       </div>
-      <span>Texto y cantidad unidad</span>
-      <button>+</button>
-      <button>-</button>
-      <button>Eliminar</button>
+      {
+        state.length === 0 ? (
+          <p>No hay tareas</p>
+        ) : (
+          state.map((states,index) => (
+            <div key={index}>
+              <span>{states.nombre}  {states.cantidad} </span>
+              <button onClick={()=> dispatch({type:types.addUnidad, payload:states.id})}>+</button>
+              <button onClick={()=> dispatch({type:types.lessUnidad,payload:states.id})}>-</button>
+              <button onClick={()=> dispatch({type:types.delete, payload:states.id})} >X</button>
+            </div>
+          ))
+        ) 
+      }
+      
     </>
   );
 };
