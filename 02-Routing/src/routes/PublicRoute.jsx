@@ -8,7 +8,7 @@ export const PublicRoute = () => {
   return (
     <>
       <Routes>
-        <Route path="login" element={<Login></Login>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
         <Route path="recuperar-contraseña" element={<RecuperarContraseña></RecuperarContraseña>}></Route>
         <Route path='/*' element={<PrivateRoute></PrivateRoute>}></Route>
       </Routes>

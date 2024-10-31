@@ -1,7 +1,11 @@
+import { PrivateRoute } from "./routes/PrivateRoute"
+import { PublicRoute } from "./routes/PublicRoute"
 
 export const App = () => {
   return (
-    <div>App</div>
+    <>
+    <PublicRoute></PublicRoute>
+    </>
   )
 }
 
