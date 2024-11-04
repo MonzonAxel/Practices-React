@@ -5,7 +5,7 @@ import {Contenido2} from "../pages/Contenido2"
 import {Contenido3} from "../pages/Contenido3"
 import { Navbar } from '../component/Navbar'
 
-export const PrivateRoute = () => {
+export const ContenidoRoute = () => {
   return (
     <>
     <Navbar></Navbar>

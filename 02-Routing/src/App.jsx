@@ -1,10 +1,13 @@
-import { PrivateRoute } from "./routes/PrivateRoute"
-import { PublicRoute } from "./routes/PublicRoute"
+import { Provider } from "./context/Provider"
+import { LoginResetRoute } from "./routes/LoginResetRoute"
 
 export const App = () => {
   return (
     <>
-    <PublicRoute></PublicRoute>
+    <Provider>
+
+    <LoginResetRoute></LoginResetRoute>
+    </Provider>
     </>
   )
 }

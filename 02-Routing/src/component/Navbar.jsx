@@ -1,11 +1,14 @@
-import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import {useContext} from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Contexto from '../context/Context';
 
 export const Navbar = () => {
+  const {generalLogout} = useContext(Contexto)
     // No uso solamente Navigate(-1) ya que al hacer click en volver hacia atras me terminaria volviendo hacia el lugar de donde me deslogie y no es lo que se busca.
     const navegar = useNavigate()
     const logout = () => {
         navegar("/login",{replace:true})
+        generalLogout()
     }
   return (
     <>
