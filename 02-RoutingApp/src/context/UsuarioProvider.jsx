@@ -31,6 +31,16 @@ const reducer = (state={},action) => {
 
 export const UsuarioProvider = ({children}) => {
 
+    const appLogin = () => {
+        localStorage.setItem("estado",true)
+        dispatch({type : types.login})
+    }
+
+    const appLogout =() => {
+        localStorage.removeItem("estado")
+        dispatch({type:types.logout})
+    }
+
     const [state,dispatch] = useReducer(reducer,{},init)
   return (
     <ContextUsuario.Provider value={{...state ,appLogin, appLogout}}>

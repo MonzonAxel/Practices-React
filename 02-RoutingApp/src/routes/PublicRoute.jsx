@@ -1,9 +1,11 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useAuth } from '../hooks/useAuth'
+import { Navigate } from 'react-router-dom';
+
 
 export const PublicRoute = ({children}) => {
-    
-  return (
-    <div>PublicRoute</div>
-  )
+    const {estado} = useAuth();
+  return (!estado)
+  ? children
+  : <Navigate to="/inicio"></Navigate>
 }
