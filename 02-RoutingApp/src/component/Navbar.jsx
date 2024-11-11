@@ -13,8 +13,8 @@ export const Navbar = () => {
 
   return (
     <nav>
-        <NavLink to="inicio">Inicio</NavLink>
-        <NavLink to="norte">Norte</NavLink>
+        <NavLink to="inicio">Capital y Patagonia</NavLink>
+        <NavLink to="norte">Norte y Este</NavLink>
         <NavLink to="compra">Compra</NavLink>
         <button onClick={logout}>Logout</button>
     </nav>

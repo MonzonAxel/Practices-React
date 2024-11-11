@@ -1,10 +1,11 @@
 import React from 'react'
-import {Routes, Route, Navigate} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import {Login} from "../pages/Login"
 import {ResetPassword} from "../pages/ResetPassword"
 import {PublicRoute} from "./PublicRoute"
 import { PrivateRoute } from "./PrivateRoute"
 import { RoutesAccess } from "./RoutesAccess"
+import { ComprarProvider } from '../context/ComprarProvider'
 
 export const RoutesInitial = () => {
   return (
@@ -20,12 +21,16 @@ export const RoutesInitial = () => {
           <ResetPassword></ResetPassword>
         </PublicRoute>
         }></Route>
-      <Route path="/*" 
-      element={
-        <PrivateRoute>
-          <RoutesAccess></RoutesAccess>
-        </PrivateRoute>}>
-      </Route>      
+      
+      <ComprarProvider>
+        <Route path="/*" 
+        element={
+          <PrivateRoute>
+            <RoutesAccess></RoutesAccess>
+          </PrivateRoute>}>
+        </Route>
+      </ComprarProvider>
+            
      </Routes>
     
     </>

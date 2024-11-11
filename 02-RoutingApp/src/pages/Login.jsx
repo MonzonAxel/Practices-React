@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
-import './login.css';
+// import './login.css';
 
 export const Login = () => {
    const {appLogin} = useAuth();
    const nvg = useNavigate();
+   const [value,setValue] = useState("")
 
   const login = () => {
     nvg("/inicio", {replace:true})
@@ -13,7 +14,29 @@ export const Login = () => {
   }
   return (
     <>
-    <div className="login-container">
+        <div className='h-[100vh] flex justify-center items-center'>
+          <article className=' w-[750px] flex justify-center'>
+            <section className='flex flex-col gap-4 px-2 mr-2'>
+              <div>
+                <h1>Bienvenidos</h1>
+                <p>Ingresar a la sesion de prueba</p>
+              </div>
+              <div className='flex flex-col gap-2'>
+                <label htmlFor="text">Ingresar el nombre</label>
+                <input value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder='Ingresar nombre' />
+              </div>
+              <div>
+                <button className='block mr-0 ml-0 w-[100%] bg-stone-300' onClick={login}>Login</button>
+              </div>
+            </section>
+            <section className='px-2'>
+              <img className="w-[300px]" src="imagenRight.png" alt="zapatilla" />
+            </section>
+          </article>
+        </div>
+
+
+        {/* <div className="login-container">
       <h2>Iniciar Sesión</h2>
       <div className="form-group">
         <input
@@ -34,26 +57,7 @@ export const Login = () => {
         <label className="form-label">Contraseña</label>
       </div>
       <button onClick={login} className="login-button">Ingresar</button>
-    </div>
-      {/* <article>
-        <section>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" placeholder='Enter your email' />
-          </div>
-          <div>
-            <label htmlFor="email">Contraseña</label>
-            <input type="email" placeholder='Enter your email' />
-          </div>
-          
-
-          <div>Login</div>
-        </section>
-        <section>
-          <img src="imagenRight.png" alt="zapatilla" />
-        </section>
-      </article>
-      <button onClick={login}>Login</button> */}
+    </div> */}
     </>
   )
 }
