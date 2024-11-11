@@ -22,14 +22,16 @@ export const RoutesInitial = () => {
         </PublicRoute>
         }></Route>
       
-      <ComprarProvider>
+      
         <Route path="/*" 
         element={
           <PrivateRoute>
-            <RoutesAccess></RoutesAccess>
+            <ComprarProvider>
+              <RoutesAccess></RoutesAccess>
+            </ComprarProvider>
           </PrivateRoute>}>
         </Route>
-      </ComprarProvider>
+ 
             
      </Routes>
     
