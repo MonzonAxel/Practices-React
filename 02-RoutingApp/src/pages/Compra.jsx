@@ -1,4 +1,3 @@
-import React from 'react'
 import { useContext } from 'react'
 import ContextComprar from '../context/ContextComprar'
 import { types } from '../types'
@@ -6,7 +5,8 @@ import { types } from '../types'
 export const Compra = () => {
 
   const {state,dispatch} = useContext(ContextComprar)
-  console.log(state)
+  
+  const totalPrecio = state.reduce((total, place) => total + place.precio, 0);
 
   const unSubscribe = (nombrePlace) => {
     dispatch({type: types.unsubscribe,
@@ -26,6 +26,7 @@ export const Compra = () => {
           <button onClick={() => unSubscribe(place.nombre)}>Anular</button>
           <p>{place.nombre}</p>
           <p>${place.precio}</p>
+          <h3>Total a pagar : ${totalPrecio}</h3>
         </div>
       ))
       :
@@ -36,7 +37,6 @@ export const Compra = () => {
 
         
     }
-      <h3>Total a pagar</h3>
       <h3>Referencia : NombreUser</h3>
     </>
 

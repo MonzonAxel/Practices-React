@@ -29,7 +29,6 @@ export const Informacion = () => {
                 precio: servicio.precio
             } }
         )
-        setEstado(true)
     }
     
     const unSubscribe = () => {
@@ -38,7 +37,6 @@ export const Informacion = () => {
                 nombre:nombre
             }
         })
-        setEstado(false)
     }
 
     const back = () => {
