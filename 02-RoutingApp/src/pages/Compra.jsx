@@ -26,7 +26,6 @@ export const Compra = () => {
           <button onClick={() => unSubscribe(place.nombre)}>Anular</button>
           <p>{place.nombre}</p>
           <p>${place.precio}</p>
-          <h3>Total a pagar : ${totalPrecio}</h3>
         </div>
       ))
       :
@@ -34,9 +33,15 @@ export const Compra = () => {
         <p>Todavia no has encontrado ninguna activadad</p>
         <p>Haz Click en Patagonia o Norte y Este para ver ofertas</p>
       </div>
-
         
     }
+    {
+      totalPrecio > 0 ? 
+      <h3>Total a pagar : ${totalPrecio}</h3>
+      : 
+      ""
+    } 
+      
       <h3>Referencia : NombreUser</h3>
     </>
 
