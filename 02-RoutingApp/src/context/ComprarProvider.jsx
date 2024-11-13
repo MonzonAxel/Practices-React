@@ -1,18 +1,20 @@
 import React from 'react'
 import ContextComprar from './ContextComprar'
 import { useReducer } from 'react'
+import { types } from '../types'
 
-const types = {
-    subscribe : "subscribe",
-    unsubscribe: "unsubcribe"
-}
 
 const myReducer = (state= {}, action) => {
     switch(action.type){
         case(types.subscribe) :
-            return "esta subscripto"
+            return [...state,
+                {nombre:action.payload.nombre, 
+                 precio:action.payload.precio
+            }]
         case(types.unsubscribe) : 
-            return "no esta subscripto"
+            return(
+                state.filter(filtered => filtered.nombre !== action.payload.nombre)
+            ) 
         default :
             return state
     }
@@ -21,20 +23,13 @@ const myReducer = (state= {}, action) => {
 
 
 export const ComprarProvider = ({children}) => {
-    const initialValue = ""
 
-    const subscribe = () => {
-        dispatch({type : types.subscribe})
-    }
-    
-    const unSubscribe = () => {
-        dispatch({type : types.unsubscribe})
-    }
+    const initialValue = []
 
     const [state,dispatch] = useReducer(myReducer,initialValue)
 
   return (
-    <ContextComprar.Provider value={{...state, subscribe , unSubscribe}}>
+    <ContextComprar.Provider value={{state, dispatch}}>
         {children}
     </ContextComprar.Provider>
   )

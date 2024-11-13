@@ -1,11 +1,8 @@
 import React from 'react'
 import ContextUsuario from './ContextUsuario'
 import { useReducer } from 'react'
+import { types } from '../types'
 
-const types = {
-    login:"login",
-    logout:"logout"
-}
 
 const init = () => {
     const valor = localStorage.getItem("estado")

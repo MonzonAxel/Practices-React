@@ -1,14 +1,45 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import data from '../../datos'
+import { types } from '../types'
 import { useContext } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import ContextComprar from '../context/ContextComprar'
 
 export const Informacion = () => {
-    const {subscribe,unSubscribe} = useContext(ContextComprar);
-    const navigate = useNavigate()
+    const {state,dispatch} = useContext(ContextComprar);
     const {nombre} = useParams()
+    const navigate = useNavigate()
     const servicio = data.find(finded => finded.nombre === nombre)
+
+    // Revisamos si el servicio está suscrito en el estado global al cargar el componente
+    const [estado, setEstado] = useState(() => {
+        return state.some(item => item.nombre === nombre);
+    });
+
+    // Para que la zona de compras detecte el estado de la informacion.
+    useEffect(() => {
+        setEstado(state.some(item => item.nombre === nombre));
+    }, [state, nombre]);
+
+
+    const subscribe = () => {
+        dispatch({type : types.subscribe, 
+            payload:{
+                nombre: nombre,
+                precio: servicio.precio
+            } }
+        )
+        setEstado(true)
+    }
+    
+    const unSubscribe = () => {
+        dispatch({type : types.unsubscribe,
+            payload: {
+                nombre:nombre
+            }
+        })
+        setEstado(false)
+    }
 
     const back = () => {
         navigate(-1)
@@ -36,8 +67,11 @@ export const Informacion = () => {
         <div>
             <img src={`/${servicio.imagen}`}  alt={servicio.imagen} />
             <span>{servicio.precio}</span>
-            <button onClick={subscribe}>Contratar</button>
-            <button onClick={unSubscribe}>Anular</button>
+            { !estado ? 
+                <button onClick={subscribe}>Contratar</button>
+                :
+                <button onClick={unSubscribe}>Anular</button>
+            }
             <button onClick={back}>Volver</button>
         </div>
     </section>
