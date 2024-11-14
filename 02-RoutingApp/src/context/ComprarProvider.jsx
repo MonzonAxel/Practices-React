@@ -21,15 +21,31 @@ const myReducer = (state= {}, action) => {
 
 }
 
-
 export const ComprarProvider = ({children}) => {
 
     const initialValue = []
 
+    const subscribe = (nombre,precio) => {
+        dispatch({type : types.subscribe, 
+            payload:{
+                nombre: nombre,
+                precio: precio
+            } }
+        )
+    }
+    
+    const unSubscribe = (nombre) => {
+        dispatch({type : types.unsubscribe,
+            payload: {
+                nombre:nombre
+            }
+        })
+    }
+
     const [state,dispatch] = useReducer(myReducer,initialValue)
 
   return (
-    <ContextComprar.Provider value={{state, dispatch}}>
+    <ContextComprar.Provider value={{state, subscribe, unSubscribe}}>
         {children}
     </ContextComprar.Provider>
   )

@@ -1,20 +1,11 @@
 import { useContext } from 'react'
 import ContextComprar from '../context/ContextComprar'
-import { types } from '../types'
 
 export const Compra = () => {
 
-  const {state,dispatch} = useContext(ContextComprar)
+  const {state,unSubscribe} = useContext(ContextComprar)
   
   const totalPrecio = state.reduce((total, place) => total + place.precio, 0);
-
-  const unSubscribe = (nombrePlace) => {
-    dispatch({type: types.unsubscribe,
-      payload: {
-        nombre:nombrePlace
-      }
-    })
-  }
 
   return (
     <>
