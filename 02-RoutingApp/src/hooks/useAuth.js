@@ -2,8 +2,8 @@ import { useContext } from "react";
 import ContextUsuario from "../context/ContextUsuario";
 
 export const useAuth = () => {
-    const {estado,appLogin,appLogout} = useContext(ContextUsuario)
-    return {estado,appLogin,appLogout}
+    const {estado,appLogin,appLogout,setNombreUser,nombreUser} = useContext(ContextUsuario)
+    return {estado,appLogin,appLogout,setNombreUser, nombreUser}
 };
 
 // El useAuth es el puente para llamar basicamente al Contexto.Tambien se puede llamar directamente al Contexto, pero utilizar directamente este componente evita llamarlo y generar confusiones a futuro. Ademas que puedo agregar mas logica de ser necesaria en el useAuth 

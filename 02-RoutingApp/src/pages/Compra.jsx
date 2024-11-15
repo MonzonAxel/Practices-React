@@ -1,9 +1,11 @@
 import { useContext } from 'react'
 import ContextComprar from '../context/ContextComprar'
+import { useAuth } from '../hooks/useAuth'
 
 export const Compra = () => {
 
   const {state,unSubscribe} = useContext(ContextComprar)
+  const {nombreUser} = useAuth();
   
   const totalPrecio = state.reduce((total, place) => total + place.precio, 0);
 
@@ -33,7 +35,7 @@ export const Compra = () => {
       ""
     } 
       
-      <h3>Referencia : NombreUser</h3>
+      <h3>Referencia : {nombreUser}</h3>
     </>
 
   )

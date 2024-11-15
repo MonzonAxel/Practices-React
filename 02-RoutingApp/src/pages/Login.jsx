@@ -4,14 +4,19 @@ import { useNavigate } from 'react-router-dom'
 // import './login.css';
 
 export const Login = () => {
-   const {appLogin} = useAuth();
+   const {appLogin, nombreUser,setNombreUser} = useAuth();
    const nvg = useNavigate();
-   const [value,setValue] = useState("")
 
   const login = () => {
+    if(!nombreUser){
+      return alert("Complete el nombre usuario")
+    }
     nvg("/inicio", {replace:true})
     appLogin()
   }
+
+  console.log(nombreUser)
+
   return (
     <>
         <div className='h-[100vh] flex justify-center items-center'>
@@ -23,7 +28,8 @@ export const Login = () => {
               </div>
               <div className='flex flex-col gap-2'>
                 <label htmlFor="text">Ingresar el nombre</label>
-                <input value={value} onChange={(e) => setValue(e.target.value)} type="text" placeholder='Ingresar nombre' />
+                <input required value={nombreUser} onChange={(e) => setNombreUser(e.target.value)}
+                 type="text" placeholder='Ingresar nombre' />
               </div>
               <div>
                 <button className='block mr-0 ml-0 w-[100%] bg-stone-300' onClick={login}>Login</button>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ContextUsuario from './ContextUsuario'
 import { useReducer } from 'react'
 import { types } from '../types'
@@ -27,6 +27,8 @@ const reducer = (state={},action) => {
 }
 
 export const UsuarioProvider = ({children}) => {
+    
+    const [nombreUser, setNombreUser] = useState("")
 
     const appLogin = () => {
         localStorage.setItem("estado",true)
@@ -40,7 +42,7 @@ export const UsuarioProvider = ({children}) => {
 
     const [state,dispatch] = useReducer(reducer,{},init)
   return (
-    <ContextUsuario.Provider value={{...state ,appLogin, appLogout}}>
+    <ContextUsuario.Provider value={{...state ,appLogin, appLogout,setNombreUser, nombreUser}}>
         {children}
     </ContextUsuario.Provider>
   )
