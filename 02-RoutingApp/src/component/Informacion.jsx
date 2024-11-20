@@ -10,12 +10,12 @@ export const Informacion = () => {
     const navigate = useNavigate()
     const servicio = data.find(finded => finded.nombre === nombre)
 
-    // Revisamos si el servicio está suscrito en el estado global al cargar el componente
+    // Revisamos si el servicio esta contratado en el estado global state al cargar el componente. Output : True | False
     const [estado, setEstado] = useState(() => {
         return state.some(item => item.nombre === nombre);
     });
 
-    // Para que la zona de compras detecte el estado de la informacion.
+    // En caso de que cambie la url:nombre o el objeto state, seteo nuevamente el estado.
     useEffect(() => {
         setEstado(state.some(item => item.nombre === nombre));
     }, [state, nombre]);    
