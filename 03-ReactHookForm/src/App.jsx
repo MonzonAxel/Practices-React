@@ -67,6 +67,7 @@ function App() {
         <Accordion key={index} title={item.title} buttons={item.buttons} />
       ))}
     </div>
+    <Banner></Banner>  
     <Foter></Foter>
 
   </>

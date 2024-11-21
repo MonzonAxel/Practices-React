@@ -1,12 +1,8 @@
 import React from 'react'
-import { Banner } from './Banner'
 
 export const Foter = () => {
   return (
     <>
-    <div>
-        <Banner></Banner>  
-    </div>
     <footer style={{ background: "#f9f9f9", display: "flex", justifyContent: "center", width: "100%", padding: "1.5rem" }}>
         
   <section
