@@ -1,35 +1,78 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import { AccordionSection } from './component/AccordionSection';
+import { Accordion } from './component/Accordion';
+import { Foter } from './component/Foter';
+import { Banner } from './component/Banner';
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const accordionData = [
+    { title: 'Turno', buttons: ['A', 'B', 'C', 'D'] },
+    { title: 'Consultas', buttons: ['A', 'B', 'C', 'D'] },
+    { title: 'Reservas', buttons: ['X', 'Y', 'Z'] },
+    { title: 'Servicios', buttons: ['1', '2', '3', '4'] },
+  ];
+
+  const [openSections, setOpenSections] = useState({
+    turno: false,
+    consultas: false,
+  });
+
+  const toggleSection = (section) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   return (
     <>
+    {/* Opcion 1 no me gusta mucho*/}
+    <div className="container">
+      <h1 className="title">Sistema de Gestión</h1>
+      
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <AccordionSection
+          title="Turno"
+          isOpen={openSections.turno}
+          onToggle={() => toggleSection('turno')}
+        >
+          <div className="button-grid">
+            <button className="btn btn-blue">Nuevo Turno</button>
+            <button className="btn btn-green">Ver Turnos</button>
+            <button className="btn btn-purple">Calendario</button>
+            <button className="btn btn-yellow">Gestionar Turnos</button>
+          </div>
+        </AccordionSection>
+
+        <AccordionSection
+          title="Consultas"
+          isOpen={openSections.consultas}
+          onToggle={() => toggleSection('consultas')}
+        >
+          <div className="button-grid">
+            <button className="btn btn-indigo">Nueva Consulta</button>
+            <button className="btn btn-pink">Historial</button>
+            <button className="btn btn-teal">Estadísticas</button>
+            <button className="btn btn-orange">Reportes</button>
+          </div>
+        </AccordionSection>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+
+    {/* Opcion 2 me parece mas decente con la constante*/}
+    <div style={{ width: '300px', margin: '0 auto', padding: '20px' }}>
+      {accordionData.map((item, index) => (
+        <Accordion key={index} title={item.title} buttons={item.buttons} />
+      ))}
+    </div>
+    <Foter></Foter>
+
+  </>
+  );
 }
 
-export default App
+export default App;
+
+
