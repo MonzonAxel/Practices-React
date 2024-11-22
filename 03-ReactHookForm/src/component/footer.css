@@ -1,0 +1,41 @@
+footer {
+    background: #f9f9f9;
+    display: flex;
+    justify-content:center; 
+    width: 100%;
+    padding: 1.5rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 970px;
+    margin-top: 25px;
+}
+
+.container-imagen {
+    grid-column: span 1; 
+    text-align: center;
+}
+
+.container-imagen img {
+    width: 170px; 
+    height: 365px;
+}
+
+.container-columns{
+    display: flex; 
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.container-columns p {
+    margin-top: 10px;
+}
+
+.container-columns-variacion-gap{
+    gap: 0.9rem;
+}
+

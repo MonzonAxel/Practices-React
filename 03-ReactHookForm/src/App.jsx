@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { AccordionSection } from './component/AccordionSection';
 import { Accordion } from './component/Accordion';
-import { Foter } from './component/Foter';
+import { Footer } from './component/Footer';
 import { Banner } from './component/Banner';
+import { Header } from './component/Header';
 import "./App.css"
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <>
+    <Header></Header>
     {/* Opcion 1 no me gusta mucho*/}
     <div className="container">
       <h1 className="title">Sistema de Gestión</h1>
@@ -68,7 +70,7 @@ function App() {
       ))}
     </div>
     <Banner></Banner>  
-    <Foter></Foter>
+    <Footer></Footer>
 
   </>
   );
