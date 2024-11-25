@@ -1,0 +1,39 @@
+
+.img-grid {
+    width: 70px;
+    margin-inline: .5rem;
+}
+
+.container {
+    max-width: 1088px;
+    margin: 0 auto;
+}
+
+.div-subgrid{
+    padding: .5rem;
+}
+
+div article{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+div article section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    box-shadow: 0 0 0 2px #f3f6f9;
+    border: 0 solid rgba(0, 0, 0, .125);
+    border-radius: .5rem;
+}
+
+@media (width <= 943px){
+    .container article{
+        grid-template-columns: 1fr;
+    }
+}

@@ -4,6 +4,7 @@ import { Accordion } from './component/Accordion';
 import { Footer } from './component/Footer';
 import { Banner } from './component/Banner';
 import { Header } from './component/Header';
+import { Body } from './component/Body';
 import "./App.css"
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
         <Accordion key={index} title={item.title} buttons={item.buttons} />
       ))}
     </div>
+    <Body></Body>
     <Banner></Banner>  
     <Footer></Footer>
 
